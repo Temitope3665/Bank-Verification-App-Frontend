@@ -19,14 +19,11 @@
 </template>
 
 <script>
-// import Button from '@/components/Button.vue'
-// import Button from './Button.vue'
 import axios from 'axios'
 export default {
     name: 'LoginMain',
     components: {
-        // Button
-        // Button
+
     },
     data () {
         return {
@@ -36,7 +33,7 @@ export default {
     },
     methods: {
         async login() {
-            let res = await axios.post('http://localhost:2000/api/login-user', {
+            let res = await axios.post('https://bank-verification-app.herokuapp.com/api/login-user', {
                 email: this.email,
                 password: this.password
             });
@@ -44,7 +41,6 @@ export default {
             if (res.status === 200) {
                 this.clearInfo()
                 this.$alert("Login successfully");
-                // console.log('Login successfully')
                 this.$router.push({name: 'Verify Bank Account'})
             } else {
                 this.$alert("Unable to login");

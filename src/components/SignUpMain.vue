@@ -25,14 +25,11 @@
 </template>
 
 <script>
-// import Button from '@/components/Button.vue'
-// import Button from './Button.vue'
 import axios from 'axios'
 export default {
     name: 'SignUpMain',
     components: {
-        // Button
-        // Button
+        
     },
     data () {
         return {
@@ -44,7 +41,7 @@ export default {
     },
     methods: {
         async signUp() {
-            let res = await axios.post('http://localhost:2000/api/register-user', {
+            let res = await axios.post('https://bank-verification-app.herokuapp.com/api/register-user', {
                 firstName: this.firstName,
                 lastName: this.lastName,
                 email: this.email,

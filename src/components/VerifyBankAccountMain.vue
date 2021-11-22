@@ -49,7 +49,7 @@ export default {
         onVerifyBtnClickHandle() {
             this.$alert("Verification completed");
             if(!this.bankAccount || !this.bankCode) return;
-                fetch(`http://localhost:2000/verify-account?bankCode=${this.bankCode}&accountNumber=${this.bankAccount}`)
+                fetch(`https://bank-verification-app.herokuapp.com/verify-account?bankCode=${this.bankCode}&accountNumber=${this.bankAccount}`)
                     .then(response => response.json())
                 .then(({ data }) => {
                     this.verifyResponse = {
